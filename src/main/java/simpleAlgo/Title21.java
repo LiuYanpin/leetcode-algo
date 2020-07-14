@@ -4,8 +4,8 @@ import common.ListNode;
 
 public class Title21 {
     public static ListNode mergeTwoLists(ListNode l1, ListNode l2) {
-        if (l1 == null || l2 == null) {
-            throw new RuntimeException("Invalid Node");
+        if (l1 == null && l2 == null) {
+            return null;
         }
         ListNode result = new ListNode(0, new ListNode());
         ListNode current = result;
@@ -41,6 +41,8 @@ public class Title21 {
             current.next = sentinel1.next;
         } else if (sentinel2.next != null) {
             current.next = sentinel2.next;
+        } else {
+            current.next = null;
         }
         return result.next;
     }
