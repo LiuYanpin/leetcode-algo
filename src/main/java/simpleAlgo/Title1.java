@@ -3,6 +3,10 @@ package simpleAlgo;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+/**
+ * 移除链表元素
+ * 删除链表中等于给定值 val 的所有节点。
+ */
 public class Title1 {
     public static int[] twoSum(int[] nums, int target) {
         HashMap<Integer, ArrayList<Integer>> source = new HashMap<>();
