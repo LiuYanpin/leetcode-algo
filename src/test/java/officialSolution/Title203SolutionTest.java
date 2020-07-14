@@ -2,7 +2,7 @@ package officialSolution;
 
 import common.ListNode;
 import org.junit.Test;
-import simpleAlgo.LinklistUtils;
+import common.Utils;
 
 public class Title203SolutionTest {
     @Test
@@ -21,6 +21,6 @@ public class Title203SolutionTest {
         node5.next = node6;
         node6.next = node7;
 
-        LinklistUtils.printElement(Title203Solution.removeElements(node1, 6));
+        Utils.printListNode(Title203Solution.removeElements(node1, 6));
     }
 }

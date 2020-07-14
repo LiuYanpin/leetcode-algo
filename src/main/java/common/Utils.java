@@ -1,10 +1,8 @@
-package simpleAlgo;
+package common;
 
-import common.ListNode;
+public class Utils {
 
-public class LinklistUtils {
-
-    public static void printElement(ListNode head) {
+    public static void printListNode(ListNode head) {
         while (head != null) {
             System.out.println(head.val);
             head = head.next;

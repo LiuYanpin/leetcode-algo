@@ -2,7 +2,7 @@ package simpleAlgo;
 
 import org.junit.Test;
 
-import static simpleAlgo.LinklistUtils.printArrays;
+import static common.Utils.printArrays;
 
 public class Title1Test {
 
