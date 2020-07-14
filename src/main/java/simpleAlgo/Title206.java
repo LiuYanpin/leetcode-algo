@@ -7,6 +7,17 @@ import common.ListNode;
  */
 public class Title206 {
     public static ListNode reverseList(ListNode head) {
-        return null;
+        if (head == null || head.next == null) {
+            return head;
+        }
+        ListNode prev = null;
+        ListNode curr = head;
+        while (curr != null) {
+            ListNode currNext = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = currNext;
+        }
+        return prev;
     }
 }
