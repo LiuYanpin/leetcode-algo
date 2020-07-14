@@ -1,12 +1,8 @@
-public class Title203 {
-    static class ListNode {
-        int val;
-        ListNode next;
+package officialSolution;
 
-        ListNode(int x) {
-            val = x;
-        }
-    }
+import common.ListNode;
+
+public class Title203Solution {
 
     public static ListNode removeElements(ListNode head, int val) {
         ListNode sentinel = new ListNode(0);
@@ -18,13 +14,6 @@ public class Title203 {
             curr = curr.next;
         }
         return sentinel.next;
-    }
-
-    public static void printElement(ListNode head) {
-        while (head != null) {
-            System.out.println(head.val);
-            head = head.next;
-        }
     }
 
 }
