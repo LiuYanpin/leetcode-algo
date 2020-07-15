@@ -27,4 +27,9 @@ public class Title66Test {
     public void test4() {
         assertArrayEquals(new int[]{2, 4, 9, 4, 0}, Title66.plusOne(new int[]{2, 4, 9, 3, 9}));
     }
+
+    @Test
+    public void test5() {
+        assertArrayEquals(new int[]{1, 0}, Title66.plusOne(new int[]{9}));
+    }
 }

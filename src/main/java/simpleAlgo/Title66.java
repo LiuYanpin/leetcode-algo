@@ -14,32 +14,16 @@ import java.util.ArrayList;
  */
 public class Title66 {
     public static int[] plusOne(int[] digits) {
-        int lastIndex = digits.length - 1;
-        if (digits[lastIndex] != 9) {
-            digits[lastIndex] = digits[lastIndex] + 1;
-            return digits;
-        }
-        int i = lastIndex;
-        for (; i >= 0; i--) {
+        for (int i = digits.length - 1; i >= 0; i--) {
             if (digits[i] == 9) {
                 digits[i] = 0;
             } else {
-                break;
+                digits[i] = digits[i] + 1;
+                return digits;
             }
         }
-        if (i > 0) {
-            digits[i] = digits[i] + 1;
-            return digits;
-        } else if (i == 0 && digits[0] != 0) {
-            digits[0] = digits[0] + 1;
-            return digits;
-        } else {
-            ArrayList<Integer> newArray = new ArrayList<>(digits.length);
-            newArray.add(1);
-            for (int j = 0; j < digits.length; j++) {
-                newArray.add(0);
-            }
-            return newArray.stream().mapToInt(Integer::intValue).toArray();
-        }
+        int[] result = new int[digits.length + 1];
+        result[0] = 1;
+        return result;
     }
 }
