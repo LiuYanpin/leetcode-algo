@@ -1,5 +1,7 @@
 package common;
 
+import java.util.List;
+
 public class Utils {
 
     public static void printListNode(ListNode head) {
@@ -15,5 +17,11 @@ public class Utils {
             System.out.print(i + " ");
         }
         System.out.println();
+    }
+
+    public static void printArrayList(List<Integer> array) {
+        for (Integer i : array) {
+            System.out.println(i);
+        }
     }
 }
