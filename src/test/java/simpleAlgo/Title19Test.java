@@ -36,4 +36,10 @@ public class Title19Test {
 
         Utils.printListNode(Title19.removeNthFromEnd(node1, 2));
     }
+
+    @Test
+    public void test3() {
+        ListNode node1 = new ListNode(1);
+        Utils.printListNode(Title19.removeNthFromEnd(node1, 1));
+    }
 }

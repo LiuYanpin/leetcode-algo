@@ -7,37 +7,42 @@ import common.ListNode;
  * 给定一个链表，删除链表的倒数第 n 个节点，并且返回链表的头结点。
  */
 public class Title19 {
-    public static ListNode removeNthFromEnd(ListNode head, int n) {
-        if (n <= 0 || head == null) {
-            return head;
-        }
-        ListNode reversed = reverse(head);
-        if (n == 1) {
-            return reverse(reversed.next);
-        }
-
+    public static ListNode removeNthFromEndV1(ListNode head, int n) {
         ListNode sentinel = new ListNode();
-        sentinel.next = reversed;
+        sentinel.next = head;
+        int count = 0;
+        ListNode temp = head;
+        while (temp != null) {
+            count = count + 1;
+            temp = temp.next;
+        }
+        temp = sentinel;
+        int step = count - n;
+        while (temp != null) {
+            if (step == 0) {
+                temp.next = temp.next.next;
+                return sentinel.next;
+            }
+            temp = temp.next;
+            step--;
+        }
+        return sentinel.next;
+    }
 
+    public static ListNode removeNthFromEnd(ListNode head, int n) {
+        ListNode sentinel = new ListNode();
+        sentinel.next = head;
+        ListNode fast = sentinel;
+        ListNode slow = sentinel;
         while (n > 0) {
-
-            n = n - 1;
+            fast = fast.next;
+            n--;
         }
-
-        return null;
-    }
-
-    private static ListNode reverse(ListNode head) {
-        ListNode pre = null;
-        ListNode curr = head;
-        while (curr != null) {
-            ListNode currNext = curr.next;
-            curr.next = pre;
-            pre = curr;
-            curr = currNext;
+        while (fast.next != null) {
+            fast = fast.next;
+            slow = slow.next;
         }
-        return pre;
+        slow.next = slow.next.next;
+        return sentinel.next;
     }
-
-
 }
