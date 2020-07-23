@@ -3,7 +3,7 @@ package interview;
 import java.util.*;
 
 /**
- * 搜狐面试：打印数组的所有子集
+ * 探探面试：打印数组的所有子集
  */
 public class Interview20200720 {
     public static List<List<Integer>> subCollection(int[] arr) {
