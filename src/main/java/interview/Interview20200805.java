@@ -1,8 +1,6 @@
 package interview;
 
 
-import java.util.Arrays;
-
 /**
  * 滴滴面试：两数之积
  */
